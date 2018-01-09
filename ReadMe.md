@@ -26,4 +26,11 @@ For my New Year's resolution 2018 I want to implement a simple beer counter proj
 ## Unit Test Framework
 * MSTest
 	* 1.2.0
-
+## Tools 
+* IDE
+  * [x] Visual Studio 2017
+* Source Control 
+  * [x] Git
+* Repository  
+  * [x] GitHub
+	
