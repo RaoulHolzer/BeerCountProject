@@ -23,7 +23,6 @@ namespace BeerCountProject.Console
                 if (IsConsoleForStart(key))
                 {
                     Start();
-                    System.Console.WriteLine("\nStart");
                 }
                 else if (IsConsoleForEnd(key))
                 {
@@ -51,6 +50,7 @@ namespace BeerCountProject.Console
             if(Decimal.TryParse(line, out decimal price))
             {
                 var beer = new Beer(price);
+                System.Console.WriteLine($"New Beer created with Price {beer.Price}. Current Bill {beer.Bill}");
             }
         }
 
