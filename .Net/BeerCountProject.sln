@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerCountProject.Test", "Be
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerCountProject", "BeerCountProject\BeerCountProject.csproj", "{547A67F5-F840-402E-BE28-67245360C4AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerCountProject.Console", "BeerCountProject.Console\BeerCountProject.Console.csproj", "{EB136A2D-7656-47D4-B9A2-DF3EDA0A49F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{547A67F5-F840-402E-BE28-67245360C4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{547A67F5-F840-402E-BE28-67245360C4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{547A67F5-F840-402E-BE28-67245360C4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB136A2D-7656-47D4-B9A2-DF3EDA0A49F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB136A2D-7656-47D4-B9A2-DF3EDA0A49F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB136A2D-7656-47D4-B9A2-DF3EDA0A49F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB136A2D-7656-47D4-B9A2-DF3EDA0A49F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
