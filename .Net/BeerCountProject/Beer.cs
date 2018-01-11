@@ -14,7 +14,7 @@ namespace BeerCountProject.Console
             Count = 0;
         }
 
-        public void Drink()
+        public virtual void Drink()
         {
             Count++;
         }

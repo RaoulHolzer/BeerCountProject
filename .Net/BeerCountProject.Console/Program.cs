@@ -47,8 +47,7 @@ namespace BeerCountProject.Console
             {
                 if (IsConsoleForStart(line.Key))
                 {
-                    beer.Drink();
-                    System.Console.WriteLine($"{Environment.NewLine}You have drunk {beer.Count} beers. Current bill {beer.Bill}");
+                    beer.Drink();                   
                 }
                 else
                 {
@@ -72,8 +71,7 @@ namespace BeerCountProject.Console
             {
                 System.Console.WriteLine("You don't enter a decimal number!\n");
             }
-            Beer beer = new Beer(price);
-            System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");
+            Beer beer = new ConsoleBeer(price);            
             return beer;
         }
 
