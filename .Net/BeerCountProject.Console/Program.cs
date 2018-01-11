@@ -17,25 +17,20 @@ namespace BeerCountProject.Console
         private static void AskToStart()
         {
             System.Console.Write($"Welcome to the Beer Count Project");
-
             var key = ReadStartKey();
-            do
+            while (!IsConsoleForEnd(key))
             {
                 if (IsConsoleForStart(key))
                 {
                     Start();
-                }
-                else if (IsConsoleForEnd(key))
-                {
-                    System.Console.WriteLine($"{Environment.NewLine}Good bye");
                 }
                 else
                 {
                     System.Console.WriteLine();
                     key = ReadStartKey();
                 }
-            } while (!IsRightInputforStartOrEnd(key));
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+            }
+            System.Console.WriteLine($"{Environment.NewLine}Good bye");
         }
 
         private static void Start()
@@ -57,7 +52,7 @@ namespace BeerCountProject.Console
                 }
                 else
                 {
-                    System.Console.WriteLine($"Worng input{Environment.NewLine}");
+                    System.Console.WriteLine($"{Environment.NewLine}Worng input");
                 }
                 line = GetDrinkBeerInput();
             }
@@ -87,12 +82,6 @@ namespace BeerCountProject.Console
             System.Console.WriteLine("How much does the beer cost (decimal)?");
             return System.Console.ReadLine();
         }
-
-        private static bool IsRightInputforStartOrEnd(ConsoleKey consoleKey)
-        {
-            return IsConsoleForStart(consoleKey) || IsConsoleForEnd(consoleKey);
-        }
-
         private static bool IsConsoleForStart(ConsoleKey consoleKey)
         {
             return consoleKey == ConsoleKey.Y;
