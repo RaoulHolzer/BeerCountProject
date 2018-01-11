@@ -20,7 +20,7 @@ namespace BeerCountProject.Console
 
             var key = ReadStartKey();
             do
-            {               
+            {
                 if (IsConsoleForStart(key))
                 {
                     Start();
@@ -47,9 +47,8 @@ namespace BeerCountProject.Console
 
         private static void DrinkBeer(Beer beer)
         {
-            System.Console.WriteLine("Do you want drink a beer? (Y/N)");
-            var line = System.Console.ReadKey();
-            do
+            ConsoleKeyInfo line = GetDrinkBeerInput();
+            while (IsConsoleForEnd(line.Key))
             {
                 if (IsConsoleForStart(line.Key))
                 {
@@ -60,13 +59,19 @@ namespace BeerCountProject.Console
                 {
                     System.Console.WriteLine("Worng input/n");
                 }
-                System.Console.WriteLine("Do you want drink a beer? (Y/N)");
-                line = System.Console.ReadKey();
-            } while (IsConsoleForEnd(line.Key));
+                line = GetDrinkBeerInput();
+            }
+        }
+
+        private static ConsoleKeyInfo GetDrinkBeerInput()
+        {
+            System.Console.WriteLine("Do you want drink a beer? (Y/N)");
+            var line = System.Console.ReadKey();
+            return line;
         }
 
         private static Beer AskForBeerPrice()
-        {       
+        {
             decimal price;
             while (Decimal.TryParse(GetPriceInput(), out price))
             {
