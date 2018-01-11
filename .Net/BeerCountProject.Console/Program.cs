@@ -27,7 +27,7 @@ namespace BeerCountProject.Console
                 }
                 else if (IsConsoleForEnd(key))
                 {
-                    System.Console.WriteLine("\nGood Bye");
+                    System.Console.WriteLine("\nGood bye");
                 }
                 else
                 {
@@ -42,9 +42,27 @@ namespace BeerCountProject.Console
         {
             System.Console.WriteLine("\nStart");
             var beer = AskForBeerPrice();
-            System.Console.WriteLine("Do you want drink a Beer? (Y/N)");
-            var key = System.Console.ReadKey();
+            DrinkBeer(beer);
+        }
 
+        private static void DrinkBeer(Beer beer)
+        {
+            System.Console.WriteLine("Do you want drink a beer? (Y/N)");
+            var line = System.Console.ReadKey();
+            do
+            {
+                if (line.Key == ConsoleKey.Y)
+                {
+                    beer.Drink();
+                    System.Console.WriteLine($"\nYou have drunk {beer.Count} beers. Current bill {beer.Bill}");
+                }
+                else
+                {
+                    System.Console.WriteLine("Worng input/n");
+                }
+                System.Console.WriteLine("Do you want drink a beer? (Y/N)");
+                line = System.Console.ReadKey();
+            } while (line.Key != ConsoleKey.N);
         }
 
         private static Beer AskForBeerPrice()
@@ -57,11 +75,11 @@ namespace BeerCountProject.Console
                 if (Decimal.TryParse(line, out decimal price))
                 {
                     beer = new Beer(price);
-                    System.Console.WriteLine($"New Beer created with Price {beer.Price}. Current Bill {beer.Bill}");
+                    System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");
                 }
                 else
                 {
-                    System.Console.WriteLine("You don't enter a decimal Number!\nHow much does the beer cost (decimal)?");
+                    System.Console.WriteLine("You don't enter a decimal number!\nHow much does the beer cost (decimal)?");
                     line = System.Console.ReadLine();
                 }
             } while (beer == null);
