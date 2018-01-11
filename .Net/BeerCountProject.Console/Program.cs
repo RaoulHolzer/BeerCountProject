@@ -66,13 +66,11 @@ namespace BeerCountProject.Console
         }
 
         private static Beer AskForBeerPrice()
-        {
-            string line = GetPriceInput();           
+        {       
             decimal price;
-            while (Decimal.TryParse(line, out price))
+            while (Decimal.TryParse(GetPriceInput(), out price))
             {
                 System.Console.WriteLine("You don't enter a decimal number!\n");
-                line = GetPriceInput();
             }
             Beer beer = new Beer(price);
             System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");
