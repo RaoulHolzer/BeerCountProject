@@ -70,19 +70,14 @@ namespace BeerCountProject.Console
             System.Console.WriteLine("How much does the beer cost (decimal)?");
             var line = System.Console.ReadLine();
             Beer beer =  null;
-            do
+            decimal price;
+            while (!Decimal.TryParse(line, out price))
             {
-                if (Decimal.TryParse(line, out decimal price))
-                {
-                    beer = new Beer(price);
-                    System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");
-                }
-                else
-                {
-                    System.Console.WriteLine("You don't enter a decimal number!\nHow much does the beer cost (decimal)?");
-                    line = System.Console.ReadLine();
-                }
-            } while (beer == null);
+                System.Console.WriteLine("You don't enter a decimal number!\nHow much does the beer cost (decimal)?");
+                line = System.Console.ReadLine();
+            }
+            beer = new Beer(price);
+            System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");          
             return beer;
         }
 
