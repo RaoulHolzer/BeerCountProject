@@ -17,9 +17,10 @@ namespace BeerCountProject.Console
         private static void AskToStart()
         {
             System.Console.Write($"Welcome to the Beer Count Project");
+
             var key = ReadStartKey();
             do
-            {
+            {               
                 if (IsConsoleForStart(key))
                 {
                     Start();
@@ -40,18 +41,31 @@ namespace BeerCountProject.Console
         private static void Start()
         {
             System.Console.WriteLine("\nStart");
-            AskForBeerPrice();
+            var beer = AskForBeerPrice();
+            System.Console.WriteLine("Do you want drink a Beer? (Y/N)");
+            var key = System.Console.ReadKey();
+
         }
 
-        private static void AskForBeerPrice()
+        private static Beer AskForBeerPrice()
         {
             System.Console.WriteLine("How much does the beer cost (decimal)?");
             var line = System.Console.ReadLine();
-            if(Decimal.TryParse(line, out decimal price))
+            Beer beer =  null;
+            do
             {
-                var beer = new Beer(price);
-                System.Console.WriteLine($"New Beer created with Price {beer.Price}. Current Bill {beer.Bill}");
-            }
+                if (Decimal.TryParse(line, out decimal price))
+                {
+                    beer = new Beer(price);
+                    System.Console.WriteLine($"New Beer created with Price {beer.Price}. Current Bill {beer.Bill}");
+                }
+                else
+                {
+                    System.Console.WriteLine("You don't enter a decimal Number!\nHow much does the beer cost (decimal)?");
+                    line = System.Console.ReadLine();
+                }
+            } while (beer == null);
+            return beer;
         }
 
         private static bool IsRightInputforStartOrEnd(ConsoleKey consoleKey)
