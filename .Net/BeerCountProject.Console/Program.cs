@@ -51,7 +51,7 @@ namespace BeerCountProject.Console
             var line = System.Console.ReadKey();
             do
             {
-                if (line.Key == ConsoleKey.Y)
+                if (IsConsoleForStart(line.Key))
                 {
                     beer.Drink();
                     System.Console.WriteLine($"\nYou have drunk {beer.Count} beers. Current bill {beer.Bill}");
@@ -62,7 +62,7 @@ namespace BeerCountProject.Console
                 }
                 System.Console.WriteLine("Do you want drink a beer? (Y/N)");
                 line = System.Console.ReadKey();
-            } while (line.Key != ConsoleKey.N);
+            } while (IsConsoleForEnd(line.Key));
         }
 
         private static Beer AskForBeerPrice()
@@ -71,7 +71,7 @@ namespace BeerCountProject.Console
             var line = System.Console.ReadLine();
             Beer beer =  null;
             decimal price;
-            while (!Decimal.TryParse(line, out price))
+            while (Decimal.TryParse(line, out price))
             {
                 System.Console.WriteLine("You don't enter a decimal number!\nHow much does the beer cost (decimal)?");
                 line = System.Console.ReadLine();
