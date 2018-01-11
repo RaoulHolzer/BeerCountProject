@@ -17,7 +17,7 @@ For my New Year's resolution 2018 I want to implement a simple beer counter proj
 			* [x] Unit Test
 ## GUI
 * Windows
-	* [ ] Console
+	* [x] Console
     * [ ] WPF
     * [ ] WinForms
 * Web
