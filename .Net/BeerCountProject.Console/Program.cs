@@ -48,7 +48,7 @@ namespace BeerCountProject.Console
         private static void DrinkBeer(Beer beer)
         {
             ConsoleKeyInfo line = GetDrinkBeerInput();
-            while (IsConsoleForEnd(line.Key))
+            while (!IsConsoleForEnd(line.Key))
             {
                 if (IsConsoleForStart(line.Key))
                 {
@@ -73,7 +73,7 @@ namespace BeerCountProject.Console
         private static Beer AskForBeerPrice()
         {
             decimal price;
-            while (Decimal.TryParse(GetPriceInput(), out price))
+            while (!Decimal.TryParse(GetPriceInput(), out price))
             {
                 System.Console.WriteLine("You don't enter a decimal number!\n");
             }
