@@ -27,7 +27,7 @@ namespace BeerCountProject.Console
                 }
                 else if (IsConsoleForEnd(key))
                 {
-                    System.Console.WriteLine("\nGood bye");
+                    System.Console.WriteLine($"{Environment.NewLine}Good bye");
                 }
                 else
                 {
@@ -40,7 +40,7 @@ namespace BeerCountProject.Console
 
         private static void Start()
         {
-            System.Console.WriteLine("\nStart");
+            System.Console.WriteLine($"{Environment.NewLine}Start");
             var beer = AskForBeerPrice();
             DrinkBeer(beer);
         }
@@ -53,11 +53,11 @@ namespace BeerCountProject.Console
                 if (IsConsoleForStart(line.Key))
                 {
                     beer.Drink();
-                    System.Console.WriteLine($"\nYou have drunk {beer.Count} beers. Current bill {beer.Bill}");
+                    System.Console.WriteLine($"{Environment.NewLine}You have drunk {beer.Count} beers. Current bill {beer.Bill}");
                 }
                 else
                 {
-                    System.Console.WriteLine("Worng input/n");
+                    System.Console.WriteLine($"Worng input{Environment.NewLine}");
                 }
                 line = GetDrinkBeerInput();
             }
@@ -105,7 +105,7 @@ namespace BeerCountProject.Console
 
         private static ConsoleKey ReadStartKey()
         {
-            System.Console.Write($"\nDo you want to start the beer counter ({ConsoleKey.Y}/{ConsoleKey.N}) ?");
+            System.Console.Write($"{Environment.NewLine}Do you want to start the beer counter ({ConsoleKey.Y}/{ConsoleKey.N}) ?");
             return System.Console.ReadKey().Key;
         }
     }
