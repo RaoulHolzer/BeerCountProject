@@ -11,10 +11,10 @@ namespace BeerCountProject.Console
     {
         static void Main(string[] args)
         {
-            AskToStart();
+            RunnConsoleBeerCounter();
         }
 
-        private static void AskToStart()
+        private static void RunnConsoleBeerCounter()
         {
             System.Console.Write($"Welcome to the Beer Count Project");
             var key = ReadStartKey();
