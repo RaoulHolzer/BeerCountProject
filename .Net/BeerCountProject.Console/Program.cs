@@ -67,18 +67,23 @@ namespace BeerCountProject.Console
 
         private static Beer AskForBeerPrice()
         {
-            System.Console.WriteLine("How much does the beer cost (decimal)?");
-            var line = System.Console.ReadLine();
-            Beer beer =  null;
+            string line = GetPriceInput();
+            Beer beer = null;
             decimal price;
             while (Decimal.TryParse(line, out price))
             {
-                System.Console.WriteLine("You don't enter a decimal number!\nHow much does the beer cost (decimal)?");
-                line = System.Console.ReadLine();
+                System.Console.WriteLine("You don't enter a decimal number!\n");
+                line = GetPriceInput();
             }
             beer = new Beer(price);
-            System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");          
+            System.Console.WriteLine($"New beer created with price {beer.Price}. Current bill {beer.Bill}");
             return beer;
+        }
+
+        private static string GetPriceInput()
+        {
+            System.Console.WriteLine("How much does the beer cost (decimal)?");
+            return System.Console.ReadLine();
         }
 
         private static bool IsRightInputforStartOrEnd(ConsoleKey consoleKey)
