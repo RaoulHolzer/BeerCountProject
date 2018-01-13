@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeerCountProject.Console
+namespace BeerCountProject
 {
     public class Beer
     {
@@ -8,9 +8,9 @@ namespace BeerCountProject.Console
         public int Count { get; private set; }
         public decimal Bill => Price * Count;
 
-        public Beer(decimal _price)
+        public Beer(decimal price)
         {
-            Price = _price;
+            Price = price;
             Count = 0;
         }
 
