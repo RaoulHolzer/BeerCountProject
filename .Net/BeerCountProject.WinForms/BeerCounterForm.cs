@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace BeerCountProject.WinForms
 {
-    public partial class Form1 : Form
+    public partial class BeerCountForm : Form
     {
-        public Form1()
+        public BeerCountForm()
         {
             InitializeComponent();
+        }
+        private void betnAddNewBeer_Click(object sender, EventArgs e)
+        {
+            var priceText = tbPrice.Text;
+            decimal.TryParse(priceText, out decimal price);
+            new Beer(price);
         }
     }
 }
