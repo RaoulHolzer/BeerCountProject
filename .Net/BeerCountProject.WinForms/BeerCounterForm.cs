@@ -12,6 +12,8 @@ namespace BeerCountProject.WinForms
 {
     public partial class BeerCountForm : Form
     {
+        public Beer Beer { get; set; }
+
         public BeerCountForm()
         {
             InitializeComponent();
@@ -20,7 +22,19 @@ namespace BeerCountProject.WinForms
         {
             var priceText = tbPrice.Text;
             decimal.TryParse(priceText, out decimal price);
-            new Beer(price);
+            Beer = new Beer(price);
+            txtBeerCount.Text = Beer.Count.ToString();
+            txtBill.Text = Beer.Bill.ToString();
+
+
         }
+        private void btnDrink_Click(object sender, EventArgs e)
+        {
+            Beer.Drink();
+            txtBeerCount.Text = Beer.Count.ToString();
+            txtBill.Text = Beer.Bill.ToString();
+        }
+
+        
     }
 }
