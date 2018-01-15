@@ -52,7 +52,7 @@
             // 
             this.tbPrice.Location = new System.Drawing.Point(94, 9);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(120, 25);
+            this.tbPrice.Size = new System.Drawing.Size(120, 22);
             this.tbPrice.TabIndex = 1;
             // 
             // lbPrice
@@ -60,7 +60,7 @@
             this.lbPrice.AutoSize = true;
             this.lbPrice.Location = new System.Drawing.Point(12, 9);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(40, 25);
+            this.lbPrice.Size = new System.Drawing.Size(40, 17);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "Price";
             // 
@@ -69,7 +69,7 @@
             this.lbBeerCount.AutoSize = true;
             this.lbBeerCount.Location = new System.Drawing.Point(13, 55);
             this.lbBeerCount.Name = "lbBeerCount";
-            this.lbBeerCount.Size = new System.Drawing.Size(75, 25);
+            this.lbBeerCount.Size = new System.Drawing.Size(75, 17);
             this.lbBeerCount.TabIndex = 4;
             this.lbBeerCount.Text = "BeerCount";
             // 
@@ -88,7 +88,7 @@
             this.txtBeerCount.AutoSize = true;
             this.txtBeerCount.Location = new System.Drawing.Point(94, 55);
             this.txtBeerCount.Name = "txtBeerCount";
-            this.txtBeerCount.Size = new System.Drawing.Size(0, 25);
+            this.txtBeerCount.Size = new System.Drawing.Size(0, 17);
             this.txtBeerCount.TabIndex = 6;
             // 
             // lbTotalBill
@@ -96,7 +96,7 @@
             this.lbTotalBill.AutoSize = true;
             this.lbTotalBill.Location = new System.Drawing.Point(13, 91);
             this.lbTotalBill.Name = "lbTotalBill";
-            this.lbTotalBill.Size = new System.Drawing.Size(62, 25);
+            this.lbTotalBill.Size = new System.Drawing.Size(62, 17);
             this.lbTotalBill.TabIndex = 7;
             this.lbTotalBill.Text = "Total Bill";
             // 
@@ -105,14 +105,14 @@
             this.txtBill.AutoSize = true;
             this.txtBill.Location = new System.Drawing.Point(94, 91);
             this.txtBill.Name = "txtBill";
-            this.txtBill.Size = new System.Drawing.Size(0, 25);
+            this.txtBill.Size = new System.Drawing.Size(0, 17);
             this.txtBill.TabIndex = 8;
             // 
             // BeerCountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(373, 141);
             this.Controls.Add(this.txtBill);
             this.Controls.Add(this.lbTotalBill);
             this.Controls.Add(this.txtBeerCount);
