@@ -18,8 +18,9 @@ For my New Year's resolution 2018 I want to implement a simple beer counter proj
 ## GUI
 * Windows
 	* [x] Console
+    * [X] WinForms
     * [ ] WPF
-    * [ ] WinForms
+    
 * Web
   * [ ] ASP.NET 
 	
